@@ -32,12 +32,18 @@ void create_output_file(const char *input, const char *output)
 
 int main(int argc, char *argv[])
 {
-    if (argc < 4)
+    if (argc < 2)
     {
         printf("Usage:\n");
         printf("  Режим 1: bizi bizi/mboot.bizi -o out\n");
         printf("  Режим 2: bizi out -a multiboot/boot.asm\n");
         return 1;
+    }
+
+    if (strcmp(argv[1], "-v") == 0)
+    {
+        printf("Bizi compiler version 0.1\n");
+        return 0;
     }
 
     char *input_file = argv[1];
